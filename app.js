@@ -12,26 +12,54 @@ btn.addEventListener('click', function(){
 
         let delBtn= document.createElement('button');
         let editBtn = document.createElement('button');
-        delBtn.innerText= 'Delete';
-        editBtn.innerText = 'Edit';
+        let doneBtn = document.createElement('button');
+
+
+        delBtn.innerText= 'Delete❎';
+        delBtn.style.backgroundColor = '#f80b0b';
+        editBtn.innerText = 'Edit✍🏻';
+        editBtn.style.backgroundColor = '#00a3e4';
+        doneBtn.innerText = 'Done✅';
+        doneBtn.style.backgroundColor = 'yellow';
+        doneBtn.style.color = 'green';
+
+
         delBtn.classList.add('delete');
         editBtn.classList.add('edit');
-        item.appendChild(delBtn);
+        doneBtn.classList.add('done');
+        
+        item.appendChild(doneBtn);
         item.appendChild(editBtn);
+        item.appendChild(delBtn);
+        
     }
 })
 
 ol.addEventListener('click', function(event){
     if(event.target.nodeName == 'BUTTON' && event.target.classList.contains('delete')){
-            event.target.parentElement.remove();
+            event.target.parentElement.remove(); // Deletes one task
         } else if(event.target.classList.contains('edit')) {
             let newText = prompt("Edit Task:", event.target.parentElement.firstChild.textContent);
             if(newText !== null && newText.trim() !== ''){
                 event.target.parentElement.firstChild.textContent = newText;
             }
+        } else if(event.target.classList.contains('done')){
+            event.target.parentElement.style.textDecoration= "line-through";  // ✅ Marks one task as done
         }
     }
 );
+
+// "Delete All" button logic
+document.getElementById('delAllBtn').addEventListener('click', function(){
+    ol.innerHTML = ''; // Clears the entire todo list
+});
+
+// "✅Mark All As Done" button logic
+document.getElementById('doneAllBtn').addEventListener('click', function(){
+    document.querySelectorAll('ol li').forEach(li => {
+        li.style.textDecoration = "line-through"; // Marks all tasks as done✅
+    });
+});
 
 
 
