@@ -36,7 +36,10 @@ btn.addEventListener('click', function(){
 
 ol.addEventListener('click', function(event){
     if(event.target.nodeName == 'BUTTON' && event.target.classList.contains('delete')){
-            event.target.parentElement.remove(); // Deletes one task
+        let confirmDelete = confirm("Are you sure you want to delete this task?");
+        if (confirmDelete) {
+            event.target.parentElement.remove(); // ✅ Deletes one task after confirmation
+        }
         } else if(event.target.classList.contains('edit')) {
             let newText = prompt("Edit Task:", event.target.parentElement.firstChild.textContent);
             if(newText !== null && newText.trim() !== ''){
@@ -48,9 +51,12 @@ ol.addEventListener('click', function(event){
     }
 );
 
-// "Delete All" button logic
+// ✅ "Delete All" button logic with confirmation
 document.getElementById('delAllBtn').addEventListener('click', function(){
-    ol.innerHTML = ''; // Clears the entire todo list
+    let confirmDeleteAll = confirm("Are you sure you want to delete all tasks?");
+    if (confirmDeleteAll) {
+        ol.innerHTML = ''; // Clears the entire list
+    }
 });
 
 // "✅Mark All As Done" button logic
