@@ -21,7 +21,6 @@ btn.addEventListener('click', function(){
         editBtn.style.backgroundColor = '#00a3e4';
         doneBtn.innerText = 'Done✅';
         doneBtn.style.backgroundColor = 'yellow';
-        doneBtn.style.color = 'green';
 
 
         delBtn.classList.add('delete');

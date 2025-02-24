@@ -62,12 +62,16 @@ button{
     background-color: yellow;
     margin: 5px;
     font-size: 15px;
-    color: green;
 
 }
 
 .endBtns{
     display: flex;
     margin: 5px;
-    /* color: #f80b0b; */
+
+}
+
+#addBtn{
+    background-color: blue;
+    color: white;
 }
