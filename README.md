@@ -1,7 +1,16 @@
 # ToDo-List App
-
-A simple To-do List web application using HTML, CSS & JavaScript implemented using DOM manipulation and hosted using Vercel.
-
+## A simple To-do List web application using HTML, CSS & JavaScript implemented using DOM manipulation and hosted using Vercel.
+---
+### Features:
+- Add new tasks
+- Mark a task as done
+- Edit a task
+- Delete a task
+- Color-coded buttons for better UI
+- Mark all tasks as done
+- Delete all tasks
+- Confirmation pop-up before deleting a single task
+- Confirmation pop-up before deleting all tasks
 
 ![image](https://github.com/user-attachments/assets/bb75addc-d896-41f6-8a38-a331c4d87a17)
 
